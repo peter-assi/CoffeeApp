@@ -1,4 +1,17 @@
-<h1>HAI!</h1>
+<h1>Twitter friends and followers</h1>
 
-<div id="hej">
+<%= form_tag('.', :id => "myForm") do%>
+  <%= label_tag "username" %>
+  <%= text_field_tag "username" %>
+  <%= submit_tag "Go!" %>
+<% end %>
+
+<div id="friends" style="display:none">
+  <h2>Friends</h2>
 </div>
+<div id="followers" style="display:none">
+  <h2>Followers</h2>
+</div>
+
+
+
