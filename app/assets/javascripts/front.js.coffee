@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
-  $.ajax
   if $('#username').length == 0
     return
 
@@ -14,7 +13,7 @@ $ ->
     showUrl = "http://api.twitter.com/1/users/show.json?id=#{twitterId}&callback=?"
     $.getJSON showUrl, (data) ->
       console.log("Fetch info data from #{showUrl}")
-      outputDiv.append("<p>#{data.screen_name}</p><div><img src='#{data.profile_image_url}'></div>")
+      outputDiv.append("<p>#{data.screen_name}</p><div><img alt='#{data.screen_name}' src='#{data.profile_image_url}'></div>")
 
   fetchData = (url, outputDiv) ->
     $.getJSON url, (data) ->
